@@ -25,10 +25,11 @@ class StoreProfesoreRequest extends FormRequest
     {
         return [
             //
-            'name' =>'required|max:10',
+            'name' =>'required|max:15',
             'biografia' => 'required|min:10', 
-            'telefono' => 'required', 
-            'direccion' => 'required|min:10'
+            'telefono' => 'required',
+            'grado_id' => 'required'
+
         ];
     }
 

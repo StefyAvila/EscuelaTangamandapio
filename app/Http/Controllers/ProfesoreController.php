@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Profesore;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProfesoreRequest;
+use App\Models\profesor;
 
 class ProfesoreController extends Controller
 {
@@ -15,7 +15,7 @@ class ProfesoreController extends Controller
      */
     public function index(){
         //
-        $profesore = Profesore::orderBy('id', 'desc')->paginate(10);
+        $profesore = profesor::orderBy('id', 'desc')->paginate(50);
 
         return view('profesores.index', compact('profesore'));
     }
@@ -34,13 +34,13 @@ class ProfesoreController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProfesoreRequest  $request
+     * @param  \App\Http\Requests\StoreProfesorRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProfesoreRequest $request)
     {
         //
-        $profesore = Profesore::create($request->all());
+        $profesore = profesor::create($request->all());
 
         return redirect()->route('profesores.show', $profesore);
         
@@ -52,7 +52,7 @@ class ProfesoreController extends Controller
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Http\Response
      */
-    public function show(Profesore $profesore)
+    public function show(profesor $profesore)
     {
         //
         return view('profesores.show', compact('profesore'));
@@ -65,7 +65,7 @@ class ProfesoreController extends Controller
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profesore $profesore)
+    public function edit(profesor $profesore)
     {
         //
         return view('profesores.edit', compact('profesore'));
@@ -78,14 +78,16 @@ class ProfesoreController extends Controller
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profesore $profesore)
+    public function update(Request $request, profesor $profesore)
     {
         //
         $request->validate([
             'name' =>'required',
             'biografia' => 'required', 
-            'telefono' => 'required', 
-            'direccion' => 'required'
+            'telefono' => 'required',
+            'grado_id' => 'required'
+
+           
         ]);
 
         $profesore->update($request->all());
@@ -99,7 +101,7 @@ class ProfesoreController extends Controller
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profesore $profesore)
+    public function destroy(profesor $profesore)
     {
         //
         $profesore->delete();

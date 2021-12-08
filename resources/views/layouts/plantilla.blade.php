@@ -12,7 +12,11 @@
 <body>
   <!-- Navbar-->
 
+
+
   @yield('content')
+  
+
  
       
 </body>

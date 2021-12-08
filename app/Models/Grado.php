@@ -7,10 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Grado extends Model
 {
+    protected $guarded = [];
     use HasFactory;
      
     //Un grado puede tener muchos alumnos
     public function alumnos(){
-        return $this->hasMany('App\Models\Alumno');
+        return $this->hasMany(Alumno::class);
     }
+
+    public function profesor(){
+        return $this->belongsToMany(profesor::class);
+    }
+
+    
 }

@@ -17,7 +17,9 @@ class AlumnoFactory extends Factory
             //
             'name' => $this->faker->name(),
            'email' => $this->faker->freeEmail(),
-           'address' => $this->faker->address()
+           'address' => $this->faker->address(),
+           'grado_id' => $this->faker->numberBetween(1, 6)
+
         ];
     }
 }

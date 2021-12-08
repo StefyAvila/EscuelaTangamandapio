@@ -23,7 +23,7 @@
         <br>
      Biografia: 
      <br>
-     <textarea name="biografia" rows="10">{{old('biografia')}}</textarea>
+     <textarea name="biografia" rows="5">{{old('biografia')}}</textarea>
     </label>
     <br>
     @error('biografia')
@@ -35,28 +35,28 @@
     <label>
         <br>
         Telefono: 
-        <textarea name="telefono"  rows="3">{{old('telefono')}}</textarea>
+        <textarea name="telefono"  rows="1">{{old('telefono')}}</textarea>
         <br>
     </label>
     @error('telefono')
         <br>
         <small>*{{$message}}</small>
     @enderror
-
-
     <br>
     <label>
-        <br>
-        Direccion: 
-        <textarea name="direccion"  rows="5">{{old('direccion')}}</textarea>
-        <br>
-    </label>
-    <br>
-    @error('direccion')
-        <br>
-        <small>*{{$message}}</small>
-        <br>
-    @enderror
+        <label>
+            <br>
+            Grado asignado: 
+            <textarea name="grado_id"  rows="1">{{old('grado_id')}}</textarea>
+            <br>
+        </label>
+        @error('grado_id')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+    
+        
     
     <button type="submit">Enviar Formulario</button>
     

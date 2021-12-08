@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Profesore;
+use App\Models\profesor;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -28,7 +28,7 @@ class ProfesorePolicy
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Profesore $profesore)
+    public function view(User $user, profesor $profesore)
     {
         //
     }
@@ -51,7 +51,7 @@ class ProfesorePolicy
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Profesore $profesore)
+    public function update(User $user, profesor $profesore)
     {
         //
     }
@@ -63,7 +63,7 @@ class ProfesorePolicy
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Profesore $profesore)
+    public function delete(User $user, profesor $profesore)
     {
         //
     }
@@ -75,7 +75,7 @@ class ProfesorePolicy
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Profesore $profesore)
+    public function restore(User $user, profesor $profesore)
     {
         //
     }
@@ -87,7 +87,7 @@ class ProfesorePolicy
      * @param  \App\Models\Profesore  $profesore
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Profesore $profesore)
+    public function forceDelete(User $user, profesor $profesore)
     {
         //
     }

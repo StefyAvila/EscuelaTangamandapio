@@ -26,7 +26,7 @@
     <br>
     Biografia:
     <br><br>
-    <textarea type="text" name="biografia" rows="10">{{old('biografia'), $profesore->biografia}}</textarea>
+    <textarea name="biografia" rows="10">{{old('biografia'), $profesore->biografia}}</textarea>
 </label>
 @error('biografia')
     <small>*{{$message}}</small>
@@ -44,13 +44,7 @@
 
 <label>
     <br>
-    Direccion: 
-    <br>
-    <textarea name="direccion"  rows="10">{{old('direccion', $profesore->direccion)}}</textarea>
-</label>
-@error('direccion')
-    <small>*{{$message}}</small>
-@enderror
+   
 
 <br> <br>
 

@@ -27,7 +27,7 @@
         <label>
             Email: 
             <br>
-            <textarea name="email"  rows="13">{{old('email'), $alumno->email }}</textarea>
+            <textarea name="email"  rows="5">{{old('email'), $alumno->email }}</textarea>
         </label>
         <br>
         @error('email')

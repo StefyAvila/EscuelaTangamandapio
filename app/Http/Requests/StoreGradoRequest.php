@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAlumnoRequest extends FormRequest
+class StoreGradoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,12 +25,14 @@ class StoreAlumnoRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|max:15',
-            'email' => 'required|min:5',
-            'address' => 'required|min:5'
+            'username' => 'required|min:10'
+        
         ];
     }
- 
+    public function messages()
+    {
+        return[
+         'username.required' => 'Debe ingresar un alias al Grado'
+        ];
+    }
 }
-
-

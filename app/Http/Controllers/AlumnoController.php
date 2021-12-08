@@ -15,7 +15,7 @@ class AlumnoController extends Controller
      */
     public function index(){
 
-        $alumno = Alumno::orderBy('id', 'desc')->paginate(10);
+        $alumno = Alumno::orderBy('id', 'desc')->paginate(40);
 
         return view('alumnos.index', compact('alumno'));
     }
@@ -62,8 +62,7 @@ class AlumnoController extends Controller
      * @param  \App\Models\Alumno  $alumno
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alumno $alumno)
-    {
+    public function edit(Alumno $alumno){
         //
         return view('alumnos.edit', compact('alumno'));
     }
@@ -87,6 +86,7 @@ class AlumnoController extends Controller
         $alumno->update($request->all());
 
         return redirect()->route('alumnos.show', $alumno->id);
+        
     }
 
     /**
