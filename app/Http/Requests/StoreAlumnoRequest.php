@@ -26,7 +26,7 @@ class StoreAlumnoRequest extends FormRequest
         return [
             //
             'name' => 'required|max:15',
-            'email' => 'required|min:5',
+            'email' => 'required',
             'address' => 'required|min:5'
         ];
     }

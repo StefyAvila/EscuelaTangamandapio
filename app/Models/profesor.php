@@ -10,7 +10,7 @@ class profesor extends Model
     protected $guarded = [];
     use HasFactory;
     public function grados(){
-        return $this->belongsToMany(Grado::class);
+        return $this->belongsTo(Grado::class);
     }
 }
  
